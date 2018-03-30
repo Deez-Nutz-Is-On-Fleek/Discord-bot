@@ -97,8 +97,14 @@ async def ipropaganda():
     """Sends a random propaganda image"""
     random = randrange(0,len(iprop))
     em = discord.Embed(title="Communist propaganda",description="Best type of propaganda there is",colour=discord.Colour.red())
-    await bot.say(embed=em.set_image(url=(prop[random]))
+    await bot.say(embed=em.set_image(url=iprop[random]))
 
+if __name__ == "__main__":
+    for extension in startup_extensions:
+        try:
+            bot.load_extension(extension)
+        except Exception as e:
+            exe = '(): ()'.format(type(e).__name__, e)
+            print('Failed to load extension C:\n()'.format(extension, exe))
 
-           
 bot.run("NDI3ODk0NjE1NTA1MzcxMTM4.DZ7lvQ.bj_Gg_4TaWWuddZ2gGb-yHf3jYU")
