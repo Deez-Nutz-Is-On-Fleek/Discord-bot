@@ -1,2 +1,2 @@
-pip install discord.py[voice]
-pip install youtube_dl
+install discord.py
+install youtube_dl
