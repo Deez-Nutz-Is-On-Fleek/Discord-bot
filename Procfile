@@ -1,1 +1,1 @@
-worker: python Soviet bot 1.py
+worker: python bot.py
