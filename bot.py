@@ -90,6 +90,6 @@ if __name__ == "__main__":
             client.load_extension(extension)
         except Exception as e:
             exe = '(): ()'.format(type(e).__name__, e)
-            print('Failed to load extension C:\n()'.format(extension, exe))
+            print('Failed to load extension C:\'.format(extension, exe))
             
 client.run("NDI3ODk0NjE1NTA1MzcxMTM4.DZ7lvQ.bj_Gg_4TaWWuddZ2gGb-yHf3jYU")
