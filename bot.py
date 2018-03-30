@@ -45,7 +45,7 @@ async def role_give(name):
 async def megagulag(ctx, user: discord.Member):
     if not user == "Soviet Bot":
         userid = user.id
-        await bot.send_message(discord.Object(id='428267559742341120'), "<@%s> has been mega gulagged" % (user))
+        await bot.send_message(discord.Object(id='428267559742341120'), "<@%s> has been mega gulagged" % (userid))
         await bot.kick(user)
     else:
         await bot.send_message(ctx.message.channel, "Dont ya try to mega gulag me!!")
