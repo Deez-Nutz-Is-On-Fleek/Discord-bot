@@ -40,12 +40,21 @@ async def role(ctx):
 async def role_give(name):
     await bot.send_message(ctx, "This command is currently WIP")
 
-    
 @bot.command(pass_context=True)
 @commands.has_role("Moderator")
 async def megagulag(ctx, user: discord.Member):
+    await bot.send_message(ctx.message.channel, "@%s has been mega gulagged :b::regional_indicator_g: :regional_indicator_o: :regional_indicator_n: :regional_indicator_e: " % (user))
     await bot.kick(user)
-    await bot.say("%s has been mega gulagged" % (user))
+
+@bot.command(pass_context=True)
+@commands.has_role("Moderator")
+async def ultragulag(ctx, user: discord.Member):
+    await bot.send_message(ctx.message.channel, "@%s has been ultra gulagged :b::regional_indicator_g: :regional_indicator_o: :regional_indicator_n: :regional_indicator_e: " % (user))
+    await bot.ban(user, delete_message_days=7)    
+
+    
+    
+    
 @bot.command()
 async def stalin():
     """The saviour of the motherland is shown"""
