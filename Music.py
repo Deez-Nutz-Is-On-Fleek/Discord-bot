@@ -1,6 +1,7 @@
 import asyncio
 import discord
 from discord.ext import commands
+from discord.voice_client import VoiceClient
 if not discord.opus.is_loaded():
     # the 'opus' library here is opus.dll on windows
     # or libopus.so on linux in the current directory
@@ -8,6 +9,9 @@ if not discord.opus.is_loaded():
     # opus library is located in and with the proper filename.
     # note that on windows this DLL is automatically provided for you
     discord.opus.load_opus('opus')
+
+Client = discord.Client()
+client = commands.Bot(command_prefix ="!")
 
 def __init__(self, bot):
         self.bot = bot
@@ -228,3 +232,5 @@ class Music:
 def setup(bot):
     bot.add_cog(Music(bot))
     print('Music is loaded')
+
+client.run("NDI3ODk0NjE1NTA1MzcxMTM4.DZ7lvQ.bj_Gg_4TaWWuddZ2gGb-yHf3jYU")
