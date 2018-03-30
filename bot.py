@@ -77,19 +77,6 @@ if __name__ == "__main__":
         except Exception as e:
             exe = '(): ()'.format(type(e).__name__, e)
             print('Failed to load extension C:\n()'.format(extension, exe))
-
-@bot.event()
-async def on_message(message):
-    contents = message.content.split(" ")
-    for word in contents:
-        if word.upper() in chatFilter:
-            if not "427870453357346826"  in [role.id for role in message.author.roles]:
-                userID = message.author.id
-                await bot.delete_message(message)
-                msgSent = await bot.send_message(message.channel,"**<@%s> DO NOT MENTION ALL THAT CAPITAL1ST SWINE ON THIS COMMUNIST SERVER**" % (userID))
-                time.sleep(5)
-                await bot.delete_message(msgSent)
-    bot.process_commands(message)
             
          
 bot.run("NDI3ODk0NjE1NTA1MzcxMTM4.DZ7lvQ.bj_Gg_4TaWWuddZ2gGb-yHf3jYU")
