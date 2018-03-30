@@ -1,2 +1,2 @@
-install discord.py
-install youtube_dl
+discord.py
+youtube_dl
