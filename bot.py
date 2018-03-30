@@ -80,7 +80,13 @@ async def chavez():
     """Former President of commie Venezuela"""
     em = discord.Embed(title="Hugo Chavez",description="President of Venezuela. RIP",colour=discord.Colour.dark_gold())
     await bot.say(embed = em.set_image(url="https://i.ytimg.com/vi/pJd0apzjFus/maxresdefault.jpg"))
-    
+  
+@bot.command()
+async def propaganda():
+    """Sends a random propaganda message"""
+    random = randrange(0,len(prop))                           
+    await bot.say(random)
+                               
 if __name__ == "__main__":
     for extension in startup_extensions:
         try:
