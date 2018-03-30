@@ -15,7 +15,7 @@ startup_extensions = ["Music"]
 @bot.event
 async def on_ready():
     print("Bot is online")
-    await client.change_presence(game=discord.Game(name='s!help||https://discord.gg/dSWtGDh'))
+    await bot.change_presence(game=discord.Game(name='s!help||https://discord.gg/dSWtGDh'))
 
 @bot.command()
 async def ping():
