@@ -13,6 +13,9 @@ chatFilter = ["CAPITALISM","CAPITALIST","TRUMP","CAPATALISM","GASTON","CAPITALIS
 bypassList = ['427870453357346826','427872312000249866']
 startup_extensions = ["Music"]
 prop = ["The USSR is almighty","The Might of Stalin will overtake the world","Capitalist swines shall be executed","We live for communism","Communism is the only way of life",":b:gone capitalist swine"]
+iprop =["https://i.ytimg.com/vi/rwmkDufxrqc/maxresdefault.jpg","https://i.ytimg.com/vi/yCrYvHBMGLY/maxresdefault.jpg","https://i.ytimg.com/vi/jm4pVfLXKqk/maxresdefault.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh6ZL4G9Mq4YU0GFE1oRmclgfs-qRw6affVlS_qgZ7etbbGf-U","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLwQqjWyo9tgBjcyrEx1HTi4oCPnHjv5hamDipzseFhQlzCWBCBw",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQ_TCJxN_TWzNdKq0t-ivDnEvjzNyeZqWX-Cb4tTL1b5U3AoXRg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQusz71Sw8KstuejsSvDUR-iT-mdXeaok3U6PjHU49LbrabcYr8pQ","http://www.infobaires24.com.ar/wp-content/uploads/2016/03/fidel.jpg"]
 
 @bot.event
 async def on_ready():
@@ -88,7 +91,13 @@ async def propaganda():
     """Sends a random propaganda message"""
     random = randrange(0,len(prop))                           
     await bot.say(prop[random])
-                               
+ 
+@bot.command()
+async def ipropaganda():
+    """Sends a random propaganda image"""
+    random = randrange(0,len(iprop))
+    await bot.say(prop[random])
+
 if __name__ == "__main__":
     for extension in startup_extensions:
         try:
