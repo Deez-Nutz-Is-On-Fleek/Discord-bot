@@ -87,7 +87,7 @@ async def chavez():
 async def propaganda():
     """Sends a random propaganda message"""
     random = randrange(0,len(prop))                           
-    await bot.say(random)
+    await bot.say(prop[random])
                                
 if __name__ == "__main__":
     for extension in startup_extensions:
