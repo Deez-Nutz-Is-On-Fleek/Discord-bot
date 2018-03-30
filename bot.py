@@ -43,15 +43,17 @@ async def role_give(name):
 @bot.command(pass_context=True)
 @commands.has_role("Moderator")
 async def megagulag(ctx, user: discord.Member):
-    await bot.send_message(ctx.message.channel, "@%s has been mega gulagged :b::regional_indicator_g: :regional_indicator_o: :regional_indicator_n: :regional_indicator_e: " % (user))
-    await bot.kick(user)
+    if not user == "Soviet Bot":
+        await bot.send_message(discord.Object(id='428267559742341120'), "@%s has been mega gulagged" % (user))
+        await bot.kick(user)
+    else:
+        await bot.send_message(ctx.message.channel, "Dont ya try to mega gulag me!!"
 
 @bot.command(pass_context=True)
 @commands.has_role("Moderator")
 async def ultragulag(ctx, user: discord.Member):
-    await bot.send_message(ctx.message.channel, "@%s has been ultra gulagged :b::regional_indicator_g: :regional_indicator_o: :regional_indicator_n: :regional_indicator_e: " % (user))
-    await bot.ban(user, delete_message_days=7)    
-
+    await bot.send_message(discord.Object(id='428267559742341120'), "@%s has been ultra gulagged" % (user))
+    await bot.ban(user, delete_message_days=7)
     
     
     
