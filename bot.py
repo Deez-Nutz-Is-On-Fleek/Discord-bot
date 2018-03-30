@@ -45,7 +45,7 @@ async def role_give(name):
 @commands.has_role("Moderator")
 async def megagulag(ctx, user: discord.Member):
     await bot.kick(user)
-
+    await bot.say("%s has been mega gulagged" % (user))
 @bot.command()
 async def stalin():
     """The saviour of the motherland is shown"""
