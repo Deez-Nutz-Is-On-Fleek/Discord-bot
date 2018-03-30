@@ -12,6 +12,8 @@ bot = commands.Bot(description="A Communist bot made by TheSilentAngel#3156", co
 chatFilter = ["CAPITALISM","CAPITALIST","TRUMP","CAPATALISM","GASTON","CAPITALISTS","OBAMA","GAST0N"]
 bypassList = ['427870453357346826','427872312000249866']
 startup_extensions = ["Music"]
+prop = ["The USSR is almighty","The Might of Stalin will overtake the world","Capitalist swines shall be executed","We live for communism","Communism is the only way of life",":b:gone capitalist swine"]
+
 @bot.event
 async def on_ready():
     print("Bot is online")
