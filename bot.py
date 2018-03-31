@@ -181,9 +181,10 @@ async def ipropaganda():
 @bot.command()
 async def fact_sender():
     channel = discord.Object(id='429448868426416168')
-    if 1:
-        await bot.send_message(channel, random.choice(soviet_facts))
-        await asyncio.sleep(84600)
+     if 1:
+        if now.hour == 12:
+                await bot.send_message(channel, random.choice(soviet_facts))
+                await asyncio.sleep(84600)
 
 
     
