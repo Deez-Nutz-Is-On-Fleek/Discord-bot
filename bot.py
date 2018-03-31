@@ -183,9 +183,7 @@ async def ipropaganda():
 async def fact_sender():
     now = datetime.datetime.now()
     channel = ctx.message.channel
-    msg = await bot.send_message(channel,"Soviet Facts will be delivered to %s every 24 hours" % (channel))
-    await asyncio.sleep(5)
-    await bot.delete_message(msg)
+    await bot.send_message(channel,"Soviet Facts will be delivered to %s every 24 hours" % (channel))
     if 1:
         await bot.send_message(channel, random.choice(soviet_facts))
         await bot.send_message
