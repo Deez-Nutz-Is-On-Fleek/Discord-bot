@@ -18,6 +18,10 @@ iprop =["https://i.ytimg.com/vi/rwmkDufxrqc/maxresdefault.jpg","https://i.ytimg.
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLwQqjWyo9tgBjcyrEx1HTi4oCPnHjv5hamDipzseFhQlzCWBCBw","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQ_TCJxN_TWzNdKq0t-ivDnEvjzNyeZqWX-Cb4tTL1b5U3AoXRg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQusz71Sw8KstuejsSvDUR-iT-mdXeaok3U6PjHU49LbrabcYr8pQ",
         "http://www.infobaires24.com.ar/wp-content/uploads/2016/03/fidel.jpg"]
 startup_extensions = ["Music"]
+chel = ["https://cdn.shopify.com/s/files/1/2018/9567/products/6005-Che-Guevara-military-beret-hat_1024x1024.jpg?v=1498280080","https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/CheHigh.jpg/225px-CheHigh.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjPfR-WWD9oXcVkIDUk1BXu9ph26cyR7bmGUQB9PsXpU9CgyJW","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYOjMX0054v68b4XucgOuV41bGv7qw-tb4976eD6FCLLIMp73D"]
+chavezl =["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Hugo_Chavez.jpg/1200px-Hugo_Chavez.jpg","https://i.ytimg.com/vi/pJd0apzjFus/maxresdefault.jpg","http://images.gawker.com/18gl7ra7kfevwjpg/c_scale,fl_progressive,q_80,w_800.jpg"]
+castrol=["https://amedia.britannica.com/700x450/75/44175-004-1AA92245.jpg","https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/10/07/11/fidel-castro-salute.jpg","https://www.newcoldwar.org/wp-content/uploads/2016/11/Fidel-Castro.jpg?50d5a1&50d5a1","https://pbs.twimg.com/media/CymfXrNWgAEEetz.jpg"]
+stalist=["https://www.biography.com/.image/t_share/MTE5NTU2MzE2Mzc0NDY4MTA3/joseph-stalin-9491723-1-402.jpg","https://fthmb.tqn.com/pGG1RUUwfNp1WzHH42M4C6WkIoY=/600x800/filters:fill(auto,1)/Stalin_Joseph-570842793df78c7d9eca7584.jpg","https://res.cloudinary.com/uktv/image/upload/b_rgb:000000,w_654,c_fill,q_90,h_367/v1458298669/rzy6wr6jvn9rr3ekfmf3.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkhTeL_4W4MIVfjDYgM27YRXRYeNEayimC2KXYyeJmBPxnBUgx"]
 soviet_facts=["In 1954 Soviet prisoners overthrew their guards and, for 40 days, established a gulag republic with a democratically elected provisional government, marriages between male and female prisoners, indigenous religious ceremonies and a general flowering of art and culture.",
              "The USSR renamed its rocket base Baikonur in 1961 to keep the Soviet space program a secret. Residents of the original Baikonur, hundreds of km away, took advantage of the resulting confusion by ordering many valuable supplies for themselves before the scam was discovered.",
              "There is an unreleased experimental Russian film where nobody on set was allowed to admit they were part of a movie production. Everyone had to pretend they were living in the 50’s for three whole years. The entire set was even wired to reproduce the effect of living under the Soviet regime.",
@@ -146,25 +150,29 @@ async def ultragulag(ctx, user: discord.Member):
 async def stalin():
     """The saviour of the motherland is shown"""
     em = discord.Embed(title="Papa Stalin",description="Stalin ze best",colour=discord.Colour.red())
-    await bot.say(embed=em.set_image(url="https://vignette.wikia.nocookie.net/hitlerrantsparodies/images/3/30/Stalin_08.jpg/revision/latest?cb=20140905235500"))
+    rand = random.choice(stalist)
+    await bot.say(embed=em.set_image(url=rand))
 
 @bot.command()
 async def castro():
     """Fidel Castro, the saviour of Cuba"""
     em = discord.Embed(title="Fidel Castro",description="Castro is number 2",colour=discord.Colour.dark_blue())
-    await bot.say(embed = em.set_image(url="https://amedia.britannica.com/700x450/75/44175-004-1AA92245.jpg"))
+    rand = random.choice(castrol)
+    await bot.say(embed = em.set_image(url=rand))
 
 @bot.command()
 async def che():
     """Fidel Castro's right hand man"""
     em = discord.Embed(title="Che Guevara",description="Che is a true leader",colour=discord.Colour.dark_green())
-    await bot.say(embed = em.set_image(url="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/CheHigh.jpg/225px-CheHigh.jpg"))
+    rand = random.choice(chel)
+    await bot.say(embed = em.set_image(url=rand))
 
 @bot.command()
 async def chavez():
     """Former President of commie Venezuela"""
     em = discord.Embed(title="Hugo Chavez",description="President of Venezuela. RIP",colour=discord.Colour.dark_gold())
-    await bot.say(embed = em.set_image(url="https://i.ytimg.com/vi/pJd0apzjFus/maxresdefault.jpg"))
+    rand = random.choice(chavezl)
+    await bot.say(embed = em.set_image(url=rand))
 
 @bot.command()
 async def propaganda():
@@ -188,8 +196,6 @@ async def fact_sender(ctx):
         await bot.send_message(channel, random.choice(soviet_facts))
         await bot.send_message
         await asyncio.sleep(86400)
-
-
     
 for extension in startup_extensions:
     try:
