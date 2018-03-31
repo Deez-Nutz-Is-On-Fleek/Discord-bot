@@ -197,7 +197,7 @@ async def fact_sender(ctx):
         await bot.send_message
         await asyncio.sleep(86400)
 
-@bot.event()
+@bot.event
 async def on_message(message):
     #we do not want the bot to repy to itself
     if message.author == bot.user:
