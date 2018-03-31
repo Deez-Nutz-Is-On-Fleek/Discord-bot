@@ -20,7 +20,14 @@ iprop =["https://i.ytimg.com/vi/rwmkDufxrqc/maxresdefault.jpg","https://i.ytimg.
 @bot.event
 async def on_ready():
     print("Bot is online")
-    await bot.change_presence(game=discord.Game(name='s!help||https://discord.gg/dSWtGDh'))
+     while True:
+        await bot.change_presence(game=discord.Game(name='s!help')
+        time.sleep(5)
+        await bot.change_presence(game=discord.Game(name='https://discord.gg/dSWtGDh for help')
+        time.sleep(5)
+        await bot.change_presence(game=discord.Game(name='Work for the Motherland')
+        time.sleep(5)
+
 
 @bot.command()
 async def ping():
