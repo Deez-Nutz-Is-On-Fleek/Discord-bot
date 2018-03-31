@@ -47,7 +47,20 @@ async def role_give(name):
 
 @bot.command(pass_context=True)
 @commands.has_role("Moderator")
+async def gulag(ctx, user: discord.Member, time):#line 50
+    userid = user.id
+    if not userid == "427894615505371138":
+        server = ctx.message.server
+        role = discord.utils.get(server.roles, name="Gulag Prisoners")
+        await bot.add_roles(user, role)
+        await bot.send_message(discord.Object(id='428267559742341120'), "<@%s> has been sent to gulag" % (userid))
+    else:
+        await bot.send_message(ctx.message.channel, "Dont send me to gulag u capitalist")
+
+@bot.command(pass_context=True)
+@commands.has_role("Moderator")
 async def megagulag(ctx, user: discord.Member):
+    """Mega Gulags a user (kick)"""
     if not user == "Soviet Bot":
         userid = user.id
         await bot.send_message(discord.Object(id='428267559742341120'), "<@%s> has been mega gulagged" % (userid))
