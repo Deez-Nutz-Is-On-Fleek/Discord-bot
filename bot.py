@@ -221,4 +221,4 @@ for extension in startup_extensions:
         print('Failed to load extension C:\n()'.format(extension, exe))
 
            
-bot.run("NDI3ODk0NjE1NTA1MzcxMTM4.DaCL5Q.rPfTQv7-osD8NateQ5wyxTAxMH8")
+bot.run("NDI3ODk0NjE1NTA1MzcxMTM4.DaFL5Q.D3H8CJTn32QrlyTVMBuuzXBFqyU")
