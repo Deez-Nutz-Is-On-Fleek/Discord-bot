@@ -186,7 +186,7 @@ async def fact_sender():
     if 1:
        if now.hour == 12:
                await bot.send_message(channel, random.choice(soviet_facts))
-               await asyncio.sleep(84600)
+               await asyncio.sleep(20)
 
 
     
