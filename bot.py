@@ -21,7 +21,7 @@ iprop =["https://i.ytimg.com/vi/rwmkDufxrqc/maxresdefault.jpg","https://i.ytimg.
 async def on_ready():
     print("Bot is online")
     loop = True
-    while loop == True:
+    if loop == True:
         await bot.change_presence(game=discord.Game(name='s!help'))
         time.sleep(5)
         await bot.change_presence(game=discord.Game(name='https://discord.gg/dSWtGDh for help'))
