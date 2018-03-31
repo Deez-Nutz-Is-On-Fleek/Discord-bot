@@ -181,6 +181,7 @@ async def ipropaganda():
 
 @bot.command()
 async def fact_sender():
+    now = time.strftime()
     channel = discord.Object(id='429448868426416168')
     if 1:
        if now.hour == 12:
