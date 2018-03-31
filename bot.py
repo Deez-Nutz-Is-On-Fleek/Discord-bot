@@ -196,6 +196,22 @@ async def fact_sender(ctx):
         await bot.send_message(channel, random.choice(soviet_facts))
         await bot.send_message
         await asyncio.sleep(86400)
+
+        @bot.event
+async def on_message(message):
+    #we do not want the bot to repy to itself
+    if message.author == bot.user:
+        return
+    if 'Soviet' in message.content:
+        emoji = get(bot.get_all_emojis(), name='USSR')
+        await bot.add_reaction(message,emoji)
+    if ':USSR:' in message.content:
+        emoji = get(bot.get_all_emojis(), name='USSR')
+        await bot.add_reaction(message,emoji)
+    if 'Communism' in message.content:
+        emoji = get(bot.get_all_emojis(), name='USSR')
+        await bot.add_reaction(message,emoji)
+    await bot.process_commands(message)
     
 for extension in startup_extensions:
     try:
