@@ -184,9 +184,8 @@ async def fact_sender():
     now = datetime.datetime.now()
     channel = discord.Object(id='429448868426416168')
     if 1:
-       if now.hour == 12:
-               await bot.send_message(channel, random.choice(soviet_facts))
-               await asyncio.sleep(5)
+        await bot.send_message(channel, random.choice(soviet_facts))
+        await asyncio.sleep(86400)
 
 
     
