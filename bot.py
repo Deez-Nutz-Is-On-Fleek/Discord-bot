@@ -180,7 +180,7 @@ async def ipropaganda():
     await bot.say(embed=em.set_image(url=iprop[random]))
 
 @bot.command(pass_context=True)
-async def fact_sender():
+async def fact_sender(ctx):
     now = datetime.datetime.now()
     channel = ctx.message.channel
     await bot.send_message(channel,"Soviet Facts will be delivered to %s every 24 hours" % (channel))
