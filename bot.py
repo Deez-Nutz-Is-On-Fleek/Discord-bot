@@ -179,12 +179,16 @@ async def ipropaganda():
     em = discord.Embed(title="Communist propaganda",description="Best type of propaganda there is",colour=discord.Colour.red())
     await bot.say(embed=em.set_image(url=iprop[random]))
 
-@bot.command()
+@bot.command(pass_context=True)
 async def fact_sender():
     now = datetime.datetime.now()
-    channel = discord.Object(id='429448868426416168')
+    channel = ctx.message.channel
+    msg = await bot.send_message(channel,"Soviet Facts will be delivered to %s every 24 hours" % (channel))
+    await asyncio.sleep(5)
+    await bot.delete_message(msg)
     if 1:
         await bot.send_message(channel, random.choice(soviet_facts))
+        await bot.send_message
         await asyncio.sleep(86400)
 
 
