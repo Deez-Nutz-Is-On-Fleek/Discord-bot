@@ -1,13 +1,16 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
+from discord.utils import get
 import asyncio
 import time
+import random
 
 bot = commands.Bot(description="A supernatural bot!!", command_prefix="#")
 months = ["January","February","March","April","May","June","July","August",
           "September","October","November","December"]
-
+swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that throat with soap!","You just sweared... Im gonna have to ask you to leave my sleepover",
+         "You sweared.. That is unacceptable.My Mom will banish you from my house"]
 
 @bot.event
 async def on_ready():
@@ -28,10 +31,47 @@ async def on_ready():
             currmonth = 2
         elif currday != 30:
            currday = currday+1
-        
         await asyncio.sleep(14400)
+
+@bot.event
+async def on_message(message):
+    #we do not want the bot to repy to itself
+    if message.author == bot.user:
+        return
+    if 'OOF' in message.content:
+        emoji = get(bot.get_all_emojis(), name='OOF')
+        await bot.add_reaction(message,emoji)
+    if ':OOF:' in message.content:
+        emoji = get(bot.get_all_emojis(), name='OOF')
+        await bot.add_reaction(message,emoji)
+    if 'fuck' in message.content:
+        await bot.send_message(message.channel,"owo")
+        await asyncio.sleep(3)
+        await bot.send_message(message.channel,random.choice(swear))
+    if 'FUCK' in message.content:
+        await bot.send_message(message.channel,"owo")
+        await asyncio.sleep(3)
+        await bot.send_message(message.channel,random.choice(swear))
+    if message.content.startswith('@everyone @everyone @everyone'):
+        userID = message.author.id
+        await client.send_message(message.channel,"<@%s> has been muted" % (userID))
+        role = discord.utils.get(server.roles, name="Muted")
+        await bot.add_roles(user, role)
+    await bot.process_commands(message)        
         
-        
+
+@bot.event
+async def on_member_join(member):
+    userID = member.id
+    channel = discord.Object(id='418177569347731457')
+    await bot.send_message(channel, "Welcome to the best server in the best server in the world, <@%s>!" % (userID))
+@bot.event
+async def on_member_remove(member):
+    userID = member.id
+    channel = discord.Object(id='418177569347731457')
+    await bot.send_message(channel, "We're sorry to see you leave,**%s**!" % (userID))
+
+
 @bot.command(pass_context=True)
 async def echo(ctx,*, txt):
     """The bot will say whatever is after 'echo'"""
