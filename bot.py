@@ -6,7 +6,7 @@ import asyncio
 import time
 import random
 
-bot = commands.Bot(description="A supernatural bot!!", command_prefix="#")
+bot = commands.Bot(description="A supernatural bot!!", command_prefix="#",pm_help=True)
 months = ["January","February","March","April","May","June","July","August",
           "September","October","November","December"]
 swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that throat with soap!","You just sweared... Im gonna have to ask you to leave my sleepover",
@@ -16,12 +16,12 @@ swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that t
 async def on_ready():
     print("Supernatural bot is online")
     await bot.change_presence(game=discord.Game(name='#help'))
-    currday = 16
+    currday = 17
     currmonth = 11
     curryear = 2033
-    while 1:
+    while 1: 
         date = currday,months[currmonth],curryear
-        await bot.send_message(discord.Object(id='434435475705692160'), date)
+        await bot.send_message(discord.Object(id='418194623689785365'), date)
         if currmonth == 11 and currday == 30:
             currday = 1
             currmonth = 0
@@ -52,6 +52,13 @@ async def on_message(message):
         await bot.send_message(message.channel,"owo")
         await asyncio.sleep(3)
         await bot.send_message(message.channel,random.choice(swear))
+    if message.content.upper().startswith("FUU"):
+        await bot.send_message(message.channel,"owo")
+        await asyncio.sleep(3)
+        await bot.send_message(message.channel,random.choice(swear))
+    if ':ThinkSmart:' in message.content:
+        emoji = get(bot.get_all_emojis(), name='ThinkSmart')
+        await bot.add_reaction(message,emoji)
     if message.content.startswith('@everyone @everyone @everyone'):
         userID = message.author.id
         await client.send_message(message.channel,"<@%s> has been muted" % (userID))
@@ -67,7 +74,7 @@ async def on_member_join(member):
     await bot.send_message(channel, "Welcome to the best server in the best server in the world, <@%s>!" % (userID))
 @bot.event
 async def on_member_remove(member):
-    userID = member.id
+    userID = member
     channel = discord.Object(id='418177569347731457')
     await bot.send_message(channel, "We're sorry to see you leave,**%s**!" % (userID))
 
@@ -98,11 +105,9 @@ async def kick(ctx, user: discord.Member):
     if not user.id == "436553984501874699":
         await bot.send_message(ctx.message.channel, "<@%s> has been kicked" % (userid))
         await bot.kick(user)
-
-
+ 
 
 
 
 
 bot.run("NDM2NTUzOTg0NTAxODc0Njk5.Dbp6sA.Br4uCdL6mEASySg9Tf1YDL4WxEA")
-
