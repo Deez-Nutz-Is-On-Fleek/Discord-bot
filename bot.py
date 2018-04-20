@@ -21,7 +21,7 @@ async def on_ready():
     curryear = 2033
     while 1: 
         date = currday,months[currmonth],curryear
-        await bot.send_message(discord.Object(id='418194623689785365'), date)
+        await bot.send_message(discord.Object(id='434435475705692160'), date)
         if currmonth == 11 and currday == 30:
             currday = 1
             currmonth = 0
