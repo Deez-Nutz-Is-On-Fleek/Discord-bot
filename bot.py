@@ -16,7 +16,7 @@ swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that t
 async def on_ready():
     print("Supernatural bot is online")
     await bot.change_presence(game=discord.Game(name='#help'))
-    currday = 10
+    currday = 15
     currmonth = 11
     curryear = 2033
     while 1:
