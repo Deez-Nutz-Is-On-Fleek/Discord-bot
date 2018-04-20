@@ -10,7 +10,7 @@ bot = commands.Bot(description="A supernatural bot!!", command_prefix="#")
 months = ["January","February","March","April","May","June","July","August",
           "September","October","November","December"]
 swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that throat with soap!","You just sweared... Im gonna have to ask you to leave my sleepover",
-         "You sweared.. That is unacceptable.My Mom will banish you from my house"]
+         "You sweared.. That is unacceptable.My Mom will banish you from my house","Swear one more time and I'll snap crackle and pop your joints"]
 
 @bot.event
 async def on_ready():
