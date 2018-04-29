@@ -6,7 +6,7 @@ import asyncio
 import time
 import random
 
-bot = commands.Bot(description="A supernatural bot!!", command_prefix="#",pm_help=True)
+bot = commands.Bot(description="A supernatural bot!!", command_prefix="sb!",pm_help=True)
 
 swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that throat with soap!","You just sweared... Im gonna have to ask you to leave my sleepover",
          "You sweared.. That is unacceptable.My Mom will banish you from my house","Swear one more time and I'll snap crackle and pop your joints"]
@@ -14,7 +14,7 @@ swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that t
 @bot.event
 async def on_ready():
     print("Supernatural bot is online")
-    await bot.change_presence(game=discord.Game(name='#help'))
+    await bot.change_presence(game=discord.Game(name='sb!help'))
 
 @bot.event
 async def on_message(message):
