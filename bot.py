@@ -15,7 +15,10 @@ swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that t
 async def on_ready():
     print("Supernatural bot is online")
     await bot.change_presence(game=discord.Game(name='sb!help'))
-
+    while 1:
+        channel = discord.Object(id='440124384623984641')
+        await bot.send_message(channel,"!disboard bump")
+        await asyncio.sleep(3600)
 @bot.event
 async def on_message(message):
     #we do not want the bot to repy to itself
