@@ -7,8 +7,7 @@ import time
 import random
 
 bot = commands.Bot(description="A supernatural bot!!", command_prefix="#",pm_help=True)
-months = ["January","February","March","April","May","June","July","August",
-          "September","October","November","December"]
+
 swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that throat with soap!","You just sweared... Im gonna have to ask you to leave my sleepover",
          "You sweared.. That is unacceptable.My Mom will banish you from my house","Swear one more time and I'll snap crackle and pop your joints"]
 
@@ -16,62 +15,19 @@ swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that t
 async def on_ready():
     print("Supernatural bot is online")
     await bot.change_presence(game=discord.Game(name='#help'))
-    currday = 17
-    currmonth = 11
-    curryear = 2033
-    while 1: 
-        date = currday,months[currmonth],curryear
-        await bot.send_message(discord.Object(id='434435475705692160'), date)
-        if currmonth == 11 and currday == 30:
-            currday = 1
-            currmonth = 0
-            curryear = curryear + 1
-        elif currday == 28 and currmonth == 1:
-            currday = 1
-            currmonth = 2
-        elif currday != 30:
-           currday = currday+1
-        await asyncio.sleep(14400)
 
 @bot.event
 async def on_message(message):
     #we do not want the bot to repy to itself
     if message.author == bot.user:
-        return
-    if 'OOF' in message.content:
-        emoji = get(bot.get_all_emojis(), name='OOF')
-        await bot.add_reaction(message,emoji)
-    if ':OOF:' in message.content:
-        emoji = get(bot.get_all_emojis(), name='OOF')
-        await bot.add_reaction(message,emoji)
-    if 'fuck' in message.content:
-        await bot.send_message(message.channel,"owo")
-        await asyncio.sleep(3)
-        await bot.send_message(message.channel,random.choice(swear))
-    if 'FUCK' in message.content:
-        await bot.send_message(message.channel,"owo")
-        await asyncio.sleep(3)
-        await bot.send_message(message.channel,random.choice(swear))
-    if message.content.upper().startswith("FUU"):
-        await bot.send_message(message.channel,"owo")
-        await asyncio.sleep(3)
-        await bot.send_message(message.channel,random.choice(swear))
-    if ':ThinkSmart:' in message.content:
-        emoji = get(bot.get_all_emojis(), name='ThinkSmart')
-        await bot.add_reaction(message,emoji)
-    if message.content.startswith('@everyone @everyone @everyone'):
-        userID = message.author.id
-        await client.send_message(message.channel,"<@%s> has been muted" % (userID))
-        role = discord.utils.get(server.roles, name="Muted")
-        await bot.add_roles(user, role)
-    await bot.process_commands(message)        
+        return    
         
 
 @bot.event
 async def on_member_join(member):
     userID = member.id
     channel = discord.Object(id='418177569347731457')
-    await bot.send_message(channel, "Welcome to the best server in the best server in the world, <@%s>!" % (userID))
+    await bot.send_message(channel, "Welcome to the best server in the world, <@%s>! Please make sure to read rules and submit your character to start roleplaying" % (userID))
 @bot.event
 async def on_member_remove(member):
     userID = member
@@ -106,7 +62,6 @@ async def kick(ctx, user: discord.Member):
         await bot.send_message(ctx.message.channel, "<@%s> has been kicked" % (userid))
         await bot.kick(user)
  
-
 
 
 
