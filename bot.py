@@ -6,7 +6,7 @@ import asyncio
 import time
 import random
 
-bot = commands.Bot(description="A supernatural bot!!", command_prefix="sb!",pm_help=True)
+bot = commands.Bot(description="A supernatural bot!!", command_prefix="rp ",pm_help=True)
 
 swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that throat with soap!","You just sweared... Im gonna have to ask you to leave my sleepover",
          "You sweared.. That is unacceptable.My Mom will banish you from my house","Swear one more time and I'll snap crackle and pop your joints"]
@@ -14,16 +14,8 @@ swear = ["Dont swear on my christian minecraft server!!", "I'll wash down that t
 @bot.event
 async def on_ready():
     print("Supernatural bot is online")
-    await bot.change_presence(game=discord.Game(name='sb!help'))
-    while 1:
-        channel = discord.Object(id='440124384623984641')
-        await bot.send_message(channel,"!disboard bump")
-        await asyncio.sleep(3600)
-@bot.event
-async def on_message(message):
-    #we do not want the bot to repy to itself
-    if message.author == bot.user:
-        return    
+    await bot.change_presence(game=discord.Game(name='rp help'))
+ 
         
 
 @bot.event
@@ -68,4 +60,4 @@ async def kick(ctx, user: discord.Member):
 
 
 
-bot.run("NDM2NTUzOTg0NTAxODc0Njk5.Dbp6sA.Br4uCdL6mEASySg9Tf1YDL4WxEA")
+bot.run("NDM2NTUzOTg0NTAxODc0Njk5.Dc-KKg.xAGIYHxhYHdRmbMQcl5IPm9RoOY")
